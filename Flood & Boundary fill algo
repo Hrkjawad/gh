@@ -1,0 +1,37 @@
+Flood fill :
+
+    flood(x, y, n, o)
+{
+
+    if (getpixel(x, y) == o)
+    {
+        putpixel(x,y,n);
+        flood(x+1,y,n,o);
+        flood(x, y+1, n, o);
+        flood(x-1, y, n, o);
+        flood(x, y-1, n, o);
+        flood(x+1, y+1, n, o);
+        flood(x-1, y-1, n, o);
+        flood(x+1, y-1, n, o);
+        flood(x - 1, y+1, n, o);
+    }
+}
+
+Boundary fill :
+
+    boundary(x, y, f, b)
+{
+
+    if (getpixel(x, y) != b && getpixel(x,y) != f)
+    {
+        putpixel(x, y, f);
+        boundary(x + 1, y, f, b);
+        boundary(x, y + 1, f, b);
+        boundary(x - 1, y, f, b);
+        boundary(x, y - 1, f, b);
+        boundary(x + 1, y + 1, f, b);
+        boundary(x - 1, y - 1, f, b);
+        boundary(x + 1, y - 1, f, b);
+        boundary(x - 1, y + 1, f, b);
+    }
+}
